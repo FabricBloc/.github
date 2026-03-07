@@ -1,57 +1,59 @@
 # FabricBloc
 
-**Embedded wallet and stablecoin infrastructure for mobile apps.**
+**Web3 infrastructure that fits in your pocket.**
 
-FabricBloc gives developers the APIs and SDKs to add wallets, USDC payments, and onchain transactions directly inside their applications. No external wallet apps, no seed phrases, no gas fees for users.
+Wallets, payments, and smart contracts — embedded directly into mobile apps. No browser extensions. No seed phrases. No friction. Just Ethereum, running natively where your users already are.
 
 ---
 
-### Core Infrastructure
+### What We're Building
 
-| Component | Description |
-|-----------|-------------|
-| **Embedded Wallets** | Custodial and non-custodial wallets created inside your app |
-| **Stablecoin Rails** | USDC-first payment orchestration and settlement |
-| **Gas Sponsorship** | Abstract network fees — users never hold ETH |
-| **Transaction Engine** | Multi-chain execution, batching, and policy management |
-| **Mobile SDKs** | Native components for iOS, Android, and web |
-| **NFT & Token Factory** | Deploy ERC-721, ERC-1155, and ERC-20 contracts via API |
-
-### Chains
-
-Base (primary) | Ethereum | Polygon | Arbitrum | BNB Chain | Avalanche
-
-### Get Started
-
-```bash
-npm install @fabricbloc/sdk
+```
+Your App
+  └── FabricKit (Swift SDK)
+        ├── Embedded Wallets     → non-custodial, created in-app
+        ├── Stablecoin Payments  → USDC send/receive, gas-free
+        ├── Smart Contracts      → deploy & interact via API
+        ├── NFTs & Tokens        → ERC-721, ERC-1155, ERC-20
+        └── Transaction Engine   → batching, sponsorship, orchestration
 ```
 
-```typescript
-import { FabricBloc } from '@fabricbloc/sdk';
+### EVM-First
 
-const wallet = await fabricbloc.wallets.create({
-  userId: "user_123",
-  type: "non-custodial",
-  chains: ["base", "polygon"],
-});
+Ethereum is home. We build on the EVM and extend across L2s.
+
+`Ethereum` | `Polygon` | `Arbitrum` | `Base` | `BNB Chain` | `Avalanche`
+
+### Mobile-First
+
+**[FabricKit](https://github.com/FabricBloc/FabricKit)** — our Swift SDK for iOS and macOS. Android coming soon.
+
+```swift
+import FabricKit
+
+let wallet = try await FabricBloc.wallets.create(
+    userId: "user_123",
+    type: .nonCustodial,
+    chains: [.ethereum, .polygon]
+)
+
+// wallet.address -> 0x...
+// No external apps. No popups. Just works.
 ```
-
-### Links
-
-- **Documentation** — [docs.fabricbloc.com](https://docs.fabricbloc.com)
-- **API Reference** — [docs.fabricbloc.com/api](https://docs.fabricbloc.com/api)
-- **Website** — [fabricbloc.com](https://fabricbloc.com)
-- **Status** — [status.fabricbloc.com](https://status.fabricbloc.com)
 
 ### SDKs
 
-| Package | Language |
-|---------|----------|
-| [`fabricbloc-ts`](https://github.com/FabricBloc/fabricbloc-ts) | TypeScript / Node.js |
-| [`fabricbloc-python`](https://github.com/FabricBloc/fabricbloc-python) | Python |
-| [`FabricKit`](https://github.com/FabricBloc/FabricKit) | Swift (iOS / macOS) |
+| Package | Platform | Status |
+|---------|----------|--------|
+| [`FabricKit`](https://github.com/FabricBloc/FabricKit) | Swift — iOS / macOS | Active |
+| [`fabricbloc-ts`](https://github.com/FabricBloc/fabricbloc-ts) | TypeScript / Node.js | Active |
+| [`fabricbloc-python`](https://github.com/FabricBloc/fabricbloc-python) | Python | Active |
+| Android SDK | Kotlin | Coming Soon |
+
+### Links
+
+**Docs** — [docs.fabricbloc.com](https://docs.fabricbloc.com) | **API** — [docs.fabricbloc.com/api](https://docs.fabricbloc.com/api) | **Website** — [fabricbloc.com](https://fabricbloc.com)
 
 ---
 
-Built by [BlocLabs](https://bloclabs.com)
+Built by [BlocLabs](https://bloclabs.com) — blockchain engineering for companies that ship.
