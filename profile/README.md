@@ -1,32 +1,36 @@
 # FabricBloc
 
-**Web3 infrastructure that fits in your pocket.**
+**Web3 infrastructure for mobile apps.**
 
-Wallets, payments, and smart contracts — embedded directly into mobile apps. No browser extensions. No seed phrases. No friction. Just Ethereum, running natively where your users already are.
+Wallets, payments, and smart contracts — embedded directly into your app. No browser extensions. No seed phrases. No gas fees for users. Non-custodial by default — users own their keys.
 
 ---
 
-### What We're Building
+### What We Build
 
 ```
 Your App
-  └── FabricKit (Swift SDK)
+  └── FabricKit / Android SDK
         ├── Embedded Wallets     → non-custodial, created in-app
-        ├── Stablecoin Payments  → USDC send/receive, gas-free
+        ├── Payments             → USDC send/receive, gas-sponsored
         ├── Smart Contracts      → deploy & interact via API
-        ├── NFTs & Tokens        → ERC-721, ERC-1155, ERC-20
+        ├── NFTs & Tokens        → ERC-721, ERC-1155, ERC-20 factories
         └── Transaction Engine   → batching, sponsorship, orchestration
 ```
 
-### EVM-First
+### Chains
 
-Ethereum is home. We build on the EVM and extend across L2s.
+`Base` (primary) | `Ethereum` | `Polygon`
 
-`Ethereum` | `Polygon` | `Arbitrum` | `Base` | `BNB Chain` | `Avalanche`
+EVM-first. We build on Ethereum and extend across L2s.
 
-### Mobile-First
+### SDKs
 
-**[FabricKit](https://github.com/FabricBloc/FabricKit)** — our Swift SDK for iOS and macOS. Android coming soon.
+| Package | Platform | Status |
+|---------|----------|--------|
+| [`FabricKit`](https://github.com/FabricBloc/FabricKit) | Swift — iOS / macOS | Active |
+| Android SDK | Kotlin | Coming Soon |
+| [`fabricbloc-ts`](https://github.com/FabricBloc/fabricbloc-ts) | TypeScript / Node.js | Active |
 
 ```swift
 import FabricKit
@@ -34,21 +38,19 @@ import FabricKit
 let wallet = try await FabricBloc.wallets.create(
     userId: "user_123",
     type: .nonCustodial,
-    chains: [.ethereum, .polygon]
+    chains: [.base, .ethereum]
 )
-
 // wallet.address -> 0x...
 // No external apps. No popups. Just works.
 ```
 
-### SDKs
+### Developer Tools
 
-| Package | Platform | Status |
-|---------|----------|--------|
-| [`FabricKit`](https://github.com/FabricBloc/FabricKit) | Swift — iOS / macOS | Active |
-| [`fabricbloc-ts`](https://github.com/FabricBloc/fabricbloc-ts) | TypeScript / Node.js | Active |
-| [`fabricbloc-python`](https://github.com/FabricBloc/fabricbloc-python) | Python | Active |
-| Android SDK | Kotlin | Coming Soon |
+| Tool | Purpose |
+|------|---------|
+| [`fabricbloc-mcp`](https://github.com/FabricBloc/fabricbloc-mcp) | MCP server — AI agents interact with FabricBloc APIs |
+| Claude Code Plugin | Engineering toolkit for building on the platform (coming soon) |
+| [`fabricbloc-docs`](https://docs.fabricbloc.com) | API reference and guides |
 
 ### Links
 
