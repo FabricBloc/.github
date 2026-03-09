@@ -1,3 +1,6 @@
+<!-- HERO BANNER — replace with exported asset from fabricbloc-brand-kit once available -->
+<!-- ![FabricBloc](https://raw.githubusercontent.com/FabricBloc/fabricbloc-brand-kit/main/brand/logos/hero-banner.png) -->
+
 # FabricBloc
 
 **Web3 infrastructure for mobile apps.**
@@ -6,11 +9,11 @@ Wallets, payments, and smart contracts — embedded directly into your app. No b
 
 ---
 
-### What We Build
+## What We Build
 
 ```
 Your App
-  └── FabricKit / Android SDK
+  └── FabricKit / fabricbloc-ts
         ├── Embedded Wallets     → non-custodial, created in-app
         ├── Payments             → USDC send/receive, gas-sponsored
         ├── Smart Contracts      → deploy & interact via API
@@ -18,19 +21,22 @@ Your App
         └── Transaction Engine   → batching, sponsorship, orchestration
 ```
 
-### Chains
+## Chains
 
 `Base` (primary) | `Ethereum` | `Polygon`
 
 EVM-first. We build on Ethereum and extend across L2s.
 
-### SDKs
+---
+
+## SDKs
 
 | Package | Platform | Status |
 |---------|----------|--------|
 | [`FabricKit`](https://github.com/FabricBloc/FabricKit) | Swift — iOS / macOS | Active |
-| Android SDK | Kotlin | Coming Soon |
 | [`fabricbloc-ts`](https://github.com/FabricBloc/fabricbloc-ts) | TypeScript / Node.js | Active |
+| [`fabricbloc-python`](https://github.com/FabricBloc/fabricbloc-python) | Python | Active |
+| Android SDK | Kotlin | Coming Soon |
 
 ```swift
 import FabricKit
@@ -44,15 +50,18 @@ let wallet = try await FabricBloc.wallets.create(
 // No external apps. No popups. Just works.
 ```
 
-### Developer Tools
+---
+
+## Developer Tools
 
 | Tool | Purpose |
 |------|---------|
 | [`fabricbloc-mcp`](https://github.com/FabricBloc/fabricbloc-mcp) | MCP server — AI agents interact with FabricBloc APIs |
-| Claude Code Plugin | Engineering toolkit for building on the platform (coming soon) |
 | [`fabricbloc-docs`](https://docs.fabricbloc.com) | API reference and guides |
 
-### Links
+---
+
+## Links
 
 **Docs** — [docs.fabricbloc.com](https://docs.fabricbloc.com) | **API** — [docs.fabricbloc.com/api](https://docs.fabricbloc.com/api) | **Website** — [fabricbloc.com](https://fabricbloc.com)
 
