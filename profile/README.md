@@ -1,5 +1,4 @@
-![FabricBloc](assets/header.png)
-
+![FabricBloc](../assets/header.png)
 
 # FabricBloc
 
