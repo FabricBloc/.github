@@ -1,5 +1,5 @@
-<!-- HERO BANNER — replace with exported asset from fabricbloc-brand-kit once available -->
-<!-- ![FabricBloc](https://raw.githubusercontent.com/FabricBloc/fabricbloc-brand-kit/main/brand/logos/hero-banner.png) -->
+![FabricBloc](https://raw.githubusercontent.com/BloclabsHQ/brand-kit-template/main/assets/images/readme-header.png)
+
 
 # FabricBloc
 
